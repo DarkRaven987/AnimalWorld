@@ -182,6 +182,7 @@ function setMoveDirection(){
     return(directions[rand]);
 }
 
+//Set born new object function
 function born(dir,i,j){
     switch(plan[i][j].getTexture()){
         case "o":
@@ -257,6 +258,8 @@ function born(dir,i,j){
     }
 }
 
+
+//Set function to check around for grass to eat
 function checkForGrass(i,j){
     if(plan[i-1][j].getTexture()==="*"){
         return 'up'
@@ -279,6 +282,8 @@ function checkForGrass(i,j){
     }
 }
 
+
+//Set function to generate grass randomly
 function growGrass(i,j){
     let rand = Math.floor(Math.random() * (300-1))+1;
     if(rand===1){
@@ -286,6 +291,8 @@ function growGrass(i,j){
     }
 }
 
+
+//Set function to find plant eaters around hunter
 function checkForMeat(i,j){
     if(plan[i-1][j].getTexture()==="o"){
         return 'up'
@@ -308,6 +315,7 @@ function checkForMeat(i,j){
     }
 }
 
+//Set function to eat object and move to it`s position
 function moveToEat(dir, i,j){
     let interData;
     switch (dir) {
@@ -512,6 +520,7 @@ function render(){
 
 render();
 
+//Set time interval for one game frame
 setInterval(onTimerTick, 600);
 
 function onTimerTick(){
