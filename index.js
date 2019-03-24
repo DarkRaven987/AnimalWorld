@@ -540,7 +540,7 @@ function onTimerTick(){
                 case "a":
                     if(plan[i][j].getMoved()===false){
                         let curEnergy = plan[i][j].getEnergy();
-                        if(curEnergy >=60){
+                        if(curEnergy >=80){
                             do {
                                 bornDir = setMoveDirection();
                                 res = checkForWalls(bornDir,i,j)
